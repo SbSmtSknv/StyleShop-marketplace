@@ -1,0 +1,9 @@
+.header { min-height: 82px; display: flex; align-items: center; gap: 32px; }
+.header__actions { display: flex; align-items: center; gap: 14px; font-size: 13px; }
+.header__cart-button { padding: 6px 10px; border: 1px solid var(--color-border); border-radius: 8px; color: var(--color-text); background: var(--color-surface); cursor: pointer; }
+.header__cart-button:hover { border-color: var(--color-primary); color: var(--color-primary); }
+.header__auth-button { padding: 6px 10px; border: 1px solid var(--color-primary); border-radius: 8px; color: var(--color-primary); background: transparent; cursor: pointer; }
+.header__auth-button:hover { color: #fff; background: var(--color-primary); }
+.menu-button { display: none; border: 0; background: transparent; font-size: 24px; cursor: pointer; }
+.mobile-menu { padding: 12px; border-radius: 10px; background: #ede5ff; color: #5b35c8; }
+@media (max-width: 850px) { .navigation, .header__actions > span, .user-profile { display: none; } .menu-button { display: block; } .header__actions { margin-left: auto; } }

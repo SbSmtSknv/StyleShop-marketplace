@@ -1,0 +1,48 @@
+.cart-panel {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+  width: min(420px, calc(100% - 40px));
+  max-height: calc(100vh - 40px);
+  overflow: auto;
+  padding: 22px;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  box-shadow: 0 20px 60px #241d2f33;
+}
+
+.cart-panel__header,
+.cart-panel__footer,
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cart-panel__header {
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.cart-panel__header h2 { margin: 0; }
+.cart-panel__close { border: 0; background: transparent; font-size: 28px; color: var(--color-muted); cursor: pointer; }
+.cart-panel__empty { color: var(--color-muted); }
+.cart-list { display: grid; gap: 14px; padding: 0; margin: 0; list-style: none; }
+.cart-item { flex-wrap: wrap; justify-content: space-between; padding-bottom: 14px; border-bottom: 1px solid var(--color-border); }
+.cart-item > div:first-child { display: grid; gap: 4px; min-width: 150px; }
+.cart-item span { color: var(--color-muted); font-size: 13px; }
+.quantity-control { display: inline-flex; align-items: center; gap: 10px; }
+.quantity-control__button { width: 32px; height: 32px; border: 1px solid var(--color-primary); border-radius: 8px; color: #fff; background: var(--color-primary); font-size: 20px; line-height: 1; cursor: pointer; }
+.quantity-control__button:hover { background: #7444e8; }
+.quantity-control__button:disabled { opacity: .45; cursor: not-allowed; }
+.cart-item__remove, .cart-panel__clear { border: 0; color: var(--color-primary); background: transparent; cursor: pointer; }
+.cart-item__remove { font-size: 12px; }
+.cart-panel__footer { flex-wrap: wrap; justify-content: space-between; margin-top: 18px; }
+.cart-panel__clear { width: 100%; padding: 10px; border: 1px solid var(--color-border); border-radius: 8px; }
+
+@media (max-width: 560px) {
+  .cart-panel { top: 12px; right: 12px; width: calc(100% - 24px); max-height: calc(100vh - 24px); }
+}

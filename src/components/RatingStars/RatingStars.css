@@ -1,0 +1,2 @@
+.rating { display: flex; gap: 7px; align-items: center; color: #f5aa25; font-size: 13px; }
+.rating small { color: #8d8298; }
