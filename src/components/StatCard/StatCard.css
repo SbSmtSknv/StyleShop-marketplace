@@ -1,7 +1,31 @@
-.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 72px; }
-.stat-card { background: #fff; border: 1px solid #eee9f7; border-radius: 14px; padding: 22px; }
-.stat-card span, .stat-card strong, .stat-card small { display: block; }
-.stat-card strong { font-size: 28px; margin: 8px 0; }
-.positive { color: #18865d; }
-.negative { color: #c44848; }
-@media (max-width: 560px) { .stats { grid-template-columns: 1fr; margin-bottom: 48px; } }
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 72px;
+}
+.stat-card {
+  background: #fff;
+  border: 1px solid #eee9f7;
+  border-radius: 14px;
+  padding: 22px;
+}
+.stat-card span, .stat-card strong, .stat-card small {
+  display: block;
+}
+.stat-card strong {
+  font-size: 28px;
+  margin: 8px 0;
+}
+.positive {
+  color: #18865d;
+}
+.negative {
+  color: #c44848;
+}
+@media (max-width: 560px) {
+  .stats {
+    grid-template-columns: 1fr;
+    margin-bottom: 48px;
+  }
+}

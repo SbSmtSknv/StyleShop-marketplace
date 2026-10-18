@@ -1,2 +1,15 @@
-.logo { background: #8B5CF6; color: #fff; display: grid; place-items: center; flex: 0 0 auto; border-radius: 12px; font-size: 11px; font-weight: 800; }
-.logo img { width: 100%; height: 100%; object-fit: cover; }
+.logo {
+  background: #8B5CF6;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 800;
+}
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
