@@ -5,10 +5,16 @@
   margin-bottom: 72px;
 }
 .stat-card {
-  background: #fff;
-  border: 1px solid #eee9f7;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: 14px;
   padding: 22px;
+  transition: background .2s ease, border-color .2s ease, color .2s ease;
+}
+.stat-card span,
+.stat-card small {
+  color: var(--color-muted);
 }
 .stat-card span, .stat-card strong, .stat-card small {
   display: block;

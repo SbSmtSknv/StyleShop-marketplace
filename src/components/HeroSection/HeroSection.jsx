@@ -1,6 +1,5 @@
 import './HeroSection.css'
 import Button from '../Button/Button'
-import heroImage from '../../assets/Gemini_Generated_Image_ltgv4fltgv4fltgv.jpg'
 
 function HeroSection({ heading, subheading, buttonText, onButtonClick }) {
   return (
@@ -11,8 +10,9 @@ function HeroSection({ heading, subheading, buttonText, onButtonClick }) {
         <p>{subheading}</p>
         <Button text={buttonText} variant="primary" onClick={onButtonClick} />
       </div>
-      <div className="hero-section__image">
-        <img src={heroImage} alt="Новая коллекция StyleShop" />
+      <div className="hero-section__brand" aria-label="StyleShop">
+        <span className="hero-section__brand-name">Style<span>Shop</span></span>
+        <small>MODERN. CURATED. APPAREL.</small>
       </div>
     </section>
   )

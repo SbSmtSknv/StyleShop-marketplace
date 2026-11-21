@@ -8,7 +8,7 @@ function Card({
 }) {
   return (
     <article className="product-card" onClick={onClick}>
-      <button type="button" onClick={(event) => { event.stopPropagation(); onFavoriteToggle?.() }} aria-label="Добавить в избранное" aria-pressed={isFavorite}>
+      <button className="favorite-button" type="button" onClick={(event) => { event.stopPropagation(); onFavoriteToggle?.() }} aria-label="Добавить в избранное" aria-pressed={isFavorite}>
         {isFavorite ? '♥' : '♡'}
       </button>
       <div className="product-card__image">

@@ -4,7 +4,6 @@ import purpleSvitshot from './assets/purple_svitshot.jpg'
 import { useAuth } from './context/AuthContext'
 import { useCart } from './context/CartContext'
 import { useTheme } from './context/ThemeContext'
-import AuthForm from './components/Auth/AuthForm'
 import Card from './components/Card/Card'
 import CategoryFilter from './components/CategoryFilter/CategoryFilter'
 import Cart from './components/Cart/Cart'
@@ -16,6 +15,7 @@ import Modal from './components/Modal/Modal'
 import SectionHeader from './components/SectionHeader/SectionHeader'
 import StatCard from './components/StatCard/StatCard'
 import TestimonialCard from './components/TestimonialCard/TestimonialCard'
+import RegisterForm from './components/RegisterForm/RegisterForm'
 import products from './data/products'
 
 const navItems = [
@@ -47,7 +47,7 @@ function App() {
   const [selectedProduct, setSelectedProduct] = useState(null)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isCartOpen, setIsCartOpen] = useState(false)
-  const [isAuthOpen, setIsAuthOpen] = useState(false)
+  const [isRegisterOpen, setIsRegisterOpen] = useState(false)
   const [activeTestimonial, setActiveTestimonial] = useState(0)
   const [favorites, setFavorites] = useState(() => {
     const saved = localStorage.getItem('styleshop-favorites')
@@ -140,7 +140,7 @@ function App() {
   return (
     <div className={`app ${theme}`}>
       <Container>
-        <Header navItems={navItems} user={user} favoriteCount={favorites.length} cartCount={totalCount} onMenuToggle={() => setIsMobileMenuOpen(!isMobileMenuOpen)} onNavigate={scrollToSection} onCartClick={() => setIsCartOpen(true)} onAuthClick={() => setIsAuthOpen(true)} onLogout={logout} />
+        <Header navItems={navItems} user={user} favoriteCount={favorites.length} cartCount={totalCount} onMenuToggle={() => setIsMobileMenuOpen(!isMobileMenuOpen)} onNavigate={scrollToSection} onCartClick={() => setIsCartOpen(true)} onAuthClick={() => setIsRegisterOpen(true)} onLogout={logout} />
         <button className="theme-toggle" type="button" onClick={toggleTheme} aria-label="Переключить тему">
           {theme === 'dark' ? '☀ Светлая тема' : '☾ Тёмная тема'}
         </button>
@@ -177,7 +177,14 @@ function App() {
         <Footer copyrightText="© 2026 StyleShop" socialLinks={[{ platform: 'Telegram', url: '#', icon: 'TG' }, { platform: 'VK', url: '#', icon: 'VK' }]} />
       </Container>
       <Cart isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
-      {isAuthOpen && <AuthForm onClose={() => setIsAuthOpen(false)} />}
+      <Modal
+        isOpen={isRegisterOpen}
+        title="Регистрация покупателя StyleShop"
+        onClose={() => setIsRegisterOpen(false)}
+        className="modal--register"
+      >
+        <RegisterForm />
+      </Modal>
       <div ref={modalRef}><Modal isOpen={isModalOpen} title={selectedProduct?.title || 'Товар'} onClose={() => setIsModalOpen(false)}><p>{selectedProduct?.description}</p><strong>{selectedProduct ? `${(selectedProduct.price * RUB_TO_KZT).toLocaleString('ru-RU')} ₸` : ''}</strong></Modal></div>
     </div>
   )

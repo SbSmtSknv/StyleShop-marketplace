@@ -7,10 +7,37 @@
 }
 .catalog__toolbar input {
   width: 260px;
-  border: 1px solid #ddd6eb;
+  border: 1px solid var(--color-border);
   border-radius: 10px;
   padding: 12px 14px;
-  background: #fff;
+  color: var(--color-text);
+  background: var(--color-surface);
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.catalog__toolbar input:focus,
+.catalog__toolbar select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px #8b5cf624;
+}
+.catalog__toolbar select {
+  width: 210px;
+  height: 44px;
+  padding: 10px 40px 10px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 20 20'%3E%3Cpath fill='%238B5CF6' d='M5.5 7.5 10 12l4.5-4.5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  appearance: none;
+  cursor: pointer;
+  transition: border-color .2s ease, box-shadow .2s ease, background-color .2s ease;
+}
+.catalog__toolbar select:hover,
+.catalog__toolbar input:hover {
+  border-color: var(--color-primary);
 }
 .category-filter {
   display: flex;
@@ -18,17 +45,22 @@
   gap: 8px;
 }
 .category-filter button {
-  border: 1px solid #e0d9ed;
+  border: 1px solid var(--color-border);
   border-radius: 100px;
-  background: #fff;
-  color: #756b82;
+  background: var(--color-surface);
+  color: var(--color-muted);
   padding: 9px 14px;
   cursor: pointer;
+  transition: border-color .2s ease, color .2s ease, background .2s ease;
+}
+.category-filter button:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
 }
 .category-filter button.active {
-  background: #8B5CF6;
+  background: var(--color-primary);
   color: #fff;
-  border-color: #8B5CF6;
+  border-color: var(--color-primary);
 }
 @media (max-width: 850px) {
   .catalog__toolbar {
@@ -36,6 +68,9 @@
     flex-direction: column;
   }
   .catalog__toolbar input {
+    width: 100%;
+  }
+  .catalog__toolbar select {
     width: 100%;
   }
 }

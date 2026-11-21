@@ -1,11 +1,13 @@
 .testimonial-card {
   width: min(100%, 560px);
   min-height: 190px;
-  background: #fff;
-  border: 1px solid #eee9f7;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: 14px;
   padding: 22px;
   box-shadow: 0 12px 30px rgba(70, 43, 120, 0.06);
+  transition: background .2s ease, border-color .2s ease, color .2s ease;
 }
 .testimonial-card .avatar {
   width: 42px;
@@ -26,6 +28,6 @@
   display: block;
 }
 .testimonial-card small {
-  color: #756b82;
+  color: var(--color-muted);
   margin-top: 4px;
 }
